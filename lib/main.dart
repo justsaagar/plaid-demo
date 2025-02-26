@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -9,19 +8,15 @@ import 'package:plaid_demo/app/routes/route_constant.dart';
 import 'package:plaid_demo/app/widgets/app_text.dart';
 import 'package:plaid_demo/repository/authentication/auth_repository.dart';
 import 'package:plaid_demo/repository/authentication/authentication_helper.dart';
-import 'package:plaid_demo/repository/utills/utills_helper.dart';
-import 'package:plaid_demo/repository/utills/utills_repository.dart';
 
 final GetIt getIt = GetIt.instance;
 
 Future<void> init() async {
   getIt.registerSingleton<AuthRepository>(AuthRepositoryImpl());
-  getIt.registerSingleton<UtillsRepository>(UtillsRepositoryImpl());
 }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   await init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
