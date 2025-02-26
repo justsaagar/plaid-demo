@@ -9,4 +9,9 @@ class OnboardingController extends GetxController {
     final String? linkToken = await authRepository.getLinkToken();
     return linkToken;
   }
+
+  Future<String?> getAccessToken(String publicToken) async {
+    final String? linkToken = await authRepository.getAccessToken(publicToken);
+    return linkToken;
+  }
 }

@@ -17,7 +17,8 @@ class OnBoardingScreenHelper {
   StreamSubscription<LinkEvent>? streamEvent;
   StreamSubscription<LinkExit>? streamExit;
   StreamSubscription<LinkSuccess>? streamSuccess;
-  LinkObject? successObject;
+  LinkSuccess? successObject;
+  String? accessToken;
 
   OnBoardingScreenHelper(this.state) {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) async {
@@ -50,11 +51,16 @@ class OnBoardingScreenHelper {
     "onEvent: $name, metadata: $metadata".logs();
   }
 
-  void _onSuccess(LinkSuccess event) {
+  Future<void> _onSuccess(LinkSuccess event) async {
     final token = event.publicToken;
     final metadata = event.metadata.description();
     "onSuccess: $token, metadata: $metadata".logs();
     successObject = event;
+    if (successObject != null) {
+      accessToken = await state.onboardingController?.getAccessToken(successObject?.publicToken ?? '');
+      'Access token --> $accessToken'.infoLogs();
+      /// TODO: Now you can use this access token to retrieve all the data related to bank account you selected.! ///
+    }
   }
 
   void _onExit(LinkExit event) {

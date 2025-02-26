@@ -21,6 +21,7 @@ class RestConstants {
 
   //     ======================= API EndPoints =======================     //
   final String createToken = 'link/token/create';
+  final String publicTokenExchange = 'item/public_token/exchange';
 }
 
 class RestServices {

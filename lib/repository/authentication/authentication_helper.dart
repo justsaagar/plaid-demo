@@ -33,4 +33,28 @@ class AuthRepositoryImpl extends AuthRepository {
     }
     return null;
   }
+
+  @override
+  Future<String?> getAccessToken(String publicToken) async {
+    try {
+      final Map<String, dynamic> bodyMap = {
+        'client_id': RestConstants.instance.clientId,
+        'secret': RestConstants.instance.secret,
+        'public_token': publicToken,
+      };
+      'Body map --> $bodyMap'.infoLogs();
+      final response = await RestServices.instance.postRestCall(endpoint: RestConstants.instance.publicTokenExchange, body: bodyMap);
+      if (response != null) {
+        'Response --> $response'.infoLogs();
+        final Map<String, dynamic> responseMap = jsonDecode(response);
+        'Response map --> $responseMap'.infoLogs();
+        if (responseMap.containsKey('access_token') && responseMap['access_token'] != null) {
+          return responseMap['access_token'].toString();
+        }
+      }
+    } on SocketException catch (e) {
+      'Catch SocketException in getAccessToken --> ${e.message}'.errorLogs();
+    }
+    return null;
+  }
 }
