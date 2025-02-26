@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get_connect/http/src/exceptions/exceptions.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/service/connectivity_service.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/service/connectivity_service.dart';
 
 class RestConstants {
   RestConstants._privateConstructor();

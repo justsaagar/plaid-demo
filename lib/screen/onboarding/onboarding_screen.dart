@@ -1,17 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/app/constant/color_constant.dart';
-import 'package:untitled/app/constant/string_constant.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/app/utills/dimension.dart';
-import 'package:untitled/app/widgets/app_background.dart';
-import 'package:untitled/app/widgets/app_button.dart';
-import 'package:untitled/app/widgets/app_image_assets.dart';
-import 'package:untitled/app/widgets/app_text.dart';
-import 'package:untitled/controller/onboarding_controller.dart';
-import 'package:untitled/screen/onboarding/onboarding_helper.dart';
-import 'package:untitled/serialized/onboarding_model.dart';
+import 'package:plaid_demo/app/constant/color_constant.dart';
+import 'package:plaid_demo/app/constant/string_constant.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/app/utills/dimension.dart';
+import 'package:plaid_demo/app/widgets/app_background.dart';
+import 'package:plaid_demo/app/widgets/app_button.dart';
+import 'package:plaid_demo/app/widgets/app_image_assets.dart';
+import 'package:plaid_demo/app/widgets/app_text.dart';
+import 'package:plaid_demo/controller/onboarding_controller.dart';
+import 'package:plaid_demo/screen/onboarding/onboarding_helper.dart';
+import 'package:plaid_demo/serialized/onboarding_model.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

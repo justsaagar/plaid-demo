@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/screen/onboarding/onboarding_screen.dart';
-import 'package:untitled/serialized/onboarding_model.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/screen/onboarding/onboarding_screen.dart';
+import 'package:plaid_demo/serialized/onboarding_model.dart';
 
 class OnBoardingScreenHelper {
   OnboardingScreenState state;

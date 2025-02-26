@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:untitled/screen/onboarding/onboarding_screen.dart';
-import 'package:untitled/screen/splash/splash_screen.dart';
+import 'package:plaid_demo/screen/onboarding/onboarding_screen.dart';
+import 'package:plaid_demo/screen/splash/splash_screen.dart';
 
 class RouteConstant {
   static const String initial = '/';

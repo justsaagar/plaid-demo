@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:untitled/app/routes/route_constant.dart';
+import 'package:plaid_demo/app/routes/route_constant.dart';
 
 class RouteHelper {
   static final RouteHelper instance = RouteHelper._internal();

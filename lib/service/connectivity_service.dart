@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
 
 class ConnectivityService {
   ConnectivityService._privateConstructor();

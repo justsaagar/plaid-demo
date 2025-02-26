@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
-import 'package:untitled/app/constant/color_constant.dart';
+import 'package:plaid_demo/app/constant/color_constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 SystemUiOverlayStyle changeStatusBarIconColor({bool lightColor = false}) {

@@ -3,8 +3,8 @@ import 'dart:typed_data';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/repository/authentication/auth_repository.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/repository/authentication/auth_repository.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   // ===================================== Sign In ======================================= //

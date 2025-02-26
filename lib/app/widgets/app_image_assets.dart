@@ -6,9 +6,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:untitled/app/constant/app_asset.dart';
-import 'package:untitled/app/utills/dimension.dart';
-import 'package:untitled/app/widgets/app_shimmer.dart';
+import 'package:plaid_demo/app/constant/app_asset.dart';
+import 'package:plaid_demo/app/utills/dimension.dart';
+import 'package:plaid_demo/app/widgets/app_shimmer.dart';
 
 class AppImageAsset extends StatelessWidget {
   final String image;

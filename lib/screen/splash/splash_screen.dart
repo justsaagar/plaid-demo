@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/app/constant/app_asset.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/app/utills/dimension.dart';
-import 'package:untitled/app/widgets/app_background.dart';
-import 'package:untitled/app/widgets/app_image_assets.dart';
-import 'package:untitled/screen/splash/splash_helper.dart';
+import 'package:plaid_demo/app/constant/app_asset.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/app/utills/dimension.dart';
+import 'package:plaid_demo/app/widgets/app_background.dart';
+import 'package:plaid_demo/app/widgets/app_image_assets.dart';
+import 'package:plaid_demo/screen/splash/splash_helper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

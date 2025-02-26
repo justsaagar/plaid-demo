@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:untitled/app/constant/color_constant.dart';
+import 'package:plaid_demo/app/constant/color_constant.dart';
 
 class AppLoader extends StatelessWidget {
   const AppLoader({super.key});

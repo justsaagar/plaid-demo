@@ -5,13 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:untitled/app/constant/color_constant.dart';
-import 'package:untitled/app/constant/string_constant.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/app/utills/dimension.dart';
-import 'package:untitled/app/widgets/app_button.dart';
-import 'package:untitled/app/widgets/app_text.dart';
-import 'package:untitled/service/permission_service.dart';
+import 'package:plaid_demo/app/constant/color_constant.dart';
+import 'package:plaid_demo/app/constant/string_constant.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/app/utills/dimension.dart';
+import 'package:plaid_demo/app/widgets/app_button.dart';
+import 'package:plaid_demo/app/widgets/app_text.dart';
+import 'package:plaid_demo/service/permission_service.dart';
 
 class AppFunction {
   static Future<File?> selectImage() async {

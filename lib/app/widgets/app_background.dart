@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/app/constant/app_asset.dart';
-import 'package:untitled/app/widgets/app_image_assets.dart';
+import 'package:plaid_demo/app/constant/app_asset.dart';
+import 'package:plaid_demo/app/widgets/app_image_assets.dart';
 
 class AppBackground extends StatelessWidget {
   final Widget child;

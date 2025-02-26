@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:untitled/app/constant/string_constant.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/repository/utills/utills_repository.dart';
+import 'package:plaid_demo/app/constant/string_constant.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/repository/utills/utills_repository.dart';
 
 class UtillsRepositoryImpl extends UtillsRepository {
   CollectionReference utillsCollection = FirebaseFirestore.instance.collection(AppCollectionConstants.utills);

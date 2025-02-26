@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:untitled/app/constant/color_constant.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/app/routes/route_constant.dart';
-import 'package:untitled/app/widgets/app_text.dart';
-import 'package:untitled/repository/authentication/auth_repository.dart';
-import 'package:untitled/repository/authentication/authentication_helper.dart';
-import 'package:untitled/repository/utills/utills_helper.dart';
-import 'package:untitled/repository/utills/utills_repository.dart';
+import 'package:plaid_demo/app/constant/color_constant.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/app/routes/route_constant.dart';
+import 'package:plaid_demo/app/widgets/app_text.dart';
+import 'package:plaid_demo/repository/authentication/auth_repository.dart';
+import 'package:plaid_demo/repository/authentication/authentication_helper.dart';
+import 'package:plaid_demo/repository/utills/utills_helper.dart';
+import 'package:plaid_demo/repository/utills/utills_repository.dart';
 
 final GetIt getIt = GetIt.instance;
 

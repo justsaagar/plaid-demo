@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:untitled/app/helper/extension_helper.dart';
-import 'package:untitled/app/utills/app_function.dart';
+import 'package:plaid_demo/app/helper/extension_helper.dart';
+import 'package:plaid_demo/app/utills/app_function.dart';
 
 class PermissionService {
   static final PermissionService instance = PermissionService._internal();
