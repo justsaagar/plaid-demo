@@ -12,6 +12,7 @@ import 'package:plaid_demo/app/widgets/app_text.dart';
 import 'package:plaid_demo/controller/onboarding_controller.dart';
 import 'package:plaid_demo/screen/onboarding/onboarding_helper.dart';
 import 'package:plaid_demo/serialized/onboarding_model.dart';
+import 'package:plaid_flutter/plaid_flutter.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -54,11 +55,12 @@ class OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 buildPageIndicator(),
                 const SizedBox(height: Dimens.heightSmallMedium),
-                const AppButton(
+                AppButton(
                   title: StringConstant.createAccount,
                   color: AppColorConstant.appWhite,
                   fontColor: AppColorConstant.appBlack,
-                  margin: EdgeInsets.symmetric(horizontal: DimensPadding.paddingExtraSemiLarge),
+                  margin: const EdgeInsets.symmetric(horizontal: DimensPadding.paddingExtraSemiLarge),
+                  onTap: () => PlaidLink.open(),
                 ),
                 const SizedBox(height: Dimens.heightNormal),
                 buildLoginText(),

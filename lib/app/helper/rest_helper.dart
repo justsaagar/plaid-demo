@@ -13,9 +13,14 @@ class RestConstants {
   static final RestConstants instance = RestConstants._privateConstructor();
 
   //     ======================= API baseurl =======================     //
-  final String baseUrl = '';
+  final String baseUrl = 'https://sandbox.plaid.com/';
+
+  //     ======================= AccessToken keys =======================     //
+  final String clientId = 'xxxd14bb1d59820023b5xxxx';
+  final String secret = 'xxxxe9ac933e664c57aead17ebxxxx';
 
   //     ======================= API EndPoints =======================     //
+  final String createToken = 'link/token/create';
 }
 
 class RestServices {
