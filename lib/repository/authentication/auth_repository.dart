@@ -1,3 +1,1 @@
-abstract class AuthRepository {
-  Future<String?> getLinkToken();
-}
+abstract class AuthRepository {}
