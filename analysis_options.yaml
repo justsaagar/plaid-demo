@@ -2,6 +2,7 @@
 include: package:lint/strict.yaml
 analyzer:
   errors:
+    sort_pub_dependencies: false
     unused_element: false
     unused_import: error
     prefer_const_constructors: error
