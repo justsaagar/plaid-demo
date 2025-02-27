@@ -51,6 +51,19 @@ jobs:
           DRY_RUN_RESULT=$(cat dry_run_result.txt | sed 's/"/\\"/g')
           APPLY_RESULT=$(cat apply_result.txt | sed 's/"/\\"/g')
           ANALYZE_RESULT=$(cat analyze_result.txt | sed 's/"/\\"/g')
+          WORKFLOW_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          # Check for errors, warnings, and success
+          if grep -q "error" analyze_result.txt; then
+            STATUS="❌ *Tests Failed!*"
+            COLOR="#FF0000"  # Red
+          elif grep -q "warning" analyze_result.txt; then
+            STATUS="⚠️ *Warnings Found!*"
+            COLOR="#FFA500"  # Orange
+          else
+            STATUS="✅ *All Tests Passed!*"
+            COLOR="#36a64f"  # Green
+          fi
 
           curl -X POST -H 'Content-type: application/json' --data \
           '{
@@ -60,6 +73,13 @@ jobs:
                 "text": {
                   "type": "mrkdwn",
                   "text": "*🚀 Flutter CI Pipeline Result*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "'"$STATUS"'"
                 }
               },
               {
@@ -95,6 +115,13 @@ jobs:
               },
               {
                 "type": "divider"
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "🔗 *[View Full Workflow Logs]('"$WORKFLOW_URL"')*"
+                }
               },
               {
                 "type": "context",
