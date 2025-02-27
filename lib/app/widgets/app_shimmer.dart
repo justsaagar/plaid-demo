@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:plaid_demo/app/constant/color_constant.dart';
+import 'package:shimmer/shimmer.dart';
 
 class AppShimmerEffectView extends StatelessWidget {
   final double? height;

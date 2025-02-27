@@ -1,8 +1,6 @@
 name: Flutter CI
 
 on:
-#  pull_request:
-#    branches: [ "dev-1.0.0" ]
   push:
     branches: [ "dev-1.0.0" ]
 
@@ -24,6 +22,18 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Preview Proposed Changes
+        id: dry_run
+        run: |
+          dart fix --dry-run > dry_run_result.txt
+          cat dry_run_result.txt
+
+      - name: Fix Analysis Issues
+        id: apply_fixes
+        run: |
+          dart fix --apply > apply_result.txt
+          cat apply_result.txt
+
       - name: Analyze Project Source
         id: analyze
         run: |
@@ -35,15 +45,62 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
         run: |
-          ANALYZE_RESULT=$(cat analyze_result.txt)
+          DRY_RUN_RESULT=$(cat dry_run_result.txt | sed 's/"/\\"/g')
+          APPLY_RESULT=$(cat apply_result.txt | sed 's/"/\\"/g')
+          ANALYZE_RESULT=$(cat analyze_result.txt | sed 's/"/\\"/g')
+
           curl -X POST -H 'Content-type: application/json' --data \
           '{
-            "text": "*Flutter CI Pipeline Result*",
-            "attachments": [
+            "blocks": [
               {
-                "color": "#36a64f",
-                "title": "Code Analysis",
-                "text": "'"$ANALYZE_RESULT"'"
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*🚀 Flutter CI Pipeline Result*"
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*🔍 Dart Fix (Dry Run):*\n```'"$DRY_RUN_RESULT"'```"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*✅ Dart Fix (Applied):*\n```'"$APPLY_RESULT"'```"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*📊 Code Analysis Report:*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "```'"$ANALYZE_RESULT"'```"
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "context",
+                "elements": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "🚀 *CI/CD Automation* | 🛠️ *GitHub Actions* | 🔔 *Slack Alerts*"
+                  }
+                ]
               }
             ]
           }' $SLACK_WEBHOOK_URL

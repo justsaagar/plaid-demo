@@ -22,6 +22,9 @@ class OnBoardingScreenHelper {
 
   OnBoardingScreenHelper(this.state) {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) async {
+      streamEvent?.cancel();
+      streamExit?.cancel();
+      streamSuccess?.cancel();
       streamEvent = PlaidLink.onEvent.listen(_onEvent);
       streamExit = PlaidLink.onExit.listen(_onExit);
       streamSuccess = PlaidLink.onSuccess.listen(_onSuccess);
